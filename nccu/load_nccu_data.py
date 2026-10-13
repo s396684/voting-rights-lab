@@ -169,8 +169,10 @@ snapshot_cols_of_interest = [
 print(gen_prov_24.columns)
 print(gen_prov_24.head())
 
-nccu_prov_24 = gen_prov_24.loc[gen_prov_24["reg_pct_lbl"] == "55-49"]
+nccu_prov_24 = gen_prov_24.loc[
+    gen_prov_24["voted_pct_lbl"].str.strip().isin(["55-49", "55-11"])
+]
 
 snapshot_24_nccu = snapshot_24.loc[
-    snapshot_24["precinct_abbrv"].str.strip() == "55-49"
+    snapshot_24["precinct_abbrv"].str.strip().isin(["55-49", "55-11"])
 ][snapshot_cols_of_interest].copy()
