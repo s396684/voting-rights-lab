@@ -176,3 +176,7 @@ nccu_prov_24 = gen_prov_24.loc[
 snapshot_24_nccu = snapshot_24.loc[
     snapshot_24["precinct_abbrv"].str.strip().isin(["55-49", "55-11"])
 ][snapshot_cols_of_interest].copy()
+
+nccu_prov_24.to_csv("data/processed/nccu_prov_24.csv", index=False)
+snapshot_24_nccu.to_csv("data/processed/snapshot_24_nccu.csv", index=False)
+print("Provisionals:", len(nccu_prov_24))
