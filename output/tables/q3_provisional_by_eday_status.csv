@@ -1,0 +1,7 @@
+year,status_on_election_day,outcome,ballots
+2024,Active - verified,Counted,6
+2024,Active - verified,Not counted,4
+2024,Active - verified,Partially counted,1
+2024,Inactive - confirmation not returned,Counted,1
+2024,Inactive - mail returned undeliverable,Counted,1
+2024,Not on election-day rolls,Counted,6

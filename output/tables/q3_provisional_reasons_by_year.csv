@@ -1,0 +1,10 @@
+year,reason_group,outcome,ballots
+2024,Address problem,Counted,1
+2024,Already voted,Counted,1
+2024,No record of registration,Counted,5
+2024,Photo ID,Counted,5
+2024,Photo ID,Not counted,2
+2024,Previously removed,Counted,2
+2024,Previously removed,Not counted,1
+2024,Wrong precinct / county,Not counted,1
+2024,Wrong precinct / county,Partially counted,1

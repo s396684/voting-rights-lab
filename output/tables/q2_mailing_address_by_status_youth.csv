@@ -1,0 +1,60 @@
+file,verification,mail_class,registrants_18_25,share
+Election day 2024,verified,Bare 1801 Fayetteville St,1055,0.505510301868711
+Election day 2024,verified,1801 Fayetteville + dorm/room,522,0.2501197891710589
+Election day 2024,verified,PO Box,12,0.005749880210828941
+Election day 2024,verified,Other Durham street address,54,0.025874460948730235
+Election day 2024,verified,Elsewhere in NC (home) address,255,0.122184954480115
+Election day 2024,verified,Out-of-state (home) address,189,0.09056061332055582
+Election day 2024,pending verification/confirmation,Bare 1801 Fayetteville St,34,0.04625850340136054
+Election day 2024,pending verification/confirmation,1801 Fayetteville + dorm/room,631,0.8585034013605443
+Election day 2024,pending verification/confirmation,PO Box,1,0.0013605442176870747
+Election day 2024,pending verification/confirmation,Other Durham street address,33,0.044897959183673466
+Election day 2024,pending verification/confirmation,Elsewhere in NC (home) address,25,0.034013605442176874
+Election day 2024,pending verification/confirmation,Out-of-state (home) address,11,0.014965986394557823
+Election day 2024,unverified,1801 Fayetteville + dorm/room,72,0.8571428571428571
+Election day 2024,unverified,Other Durham street address,7,0.08333333333333333
+Election day 2024,unverified,Elsewhere in NC (home) address,3,0.03571428571428571
+Election day 2024,unverified,Out-of-state (home) address,2,0.023809523809523808
+Election day 2024,mail returned undeliverable,Bare 1801 Fayetteville St,21,0.2692307692307692
+Election day 2024,mail returned undeliverable,1801 Fayetteville + dorm/room,35,0.44871794871794873
+Election day 2024,mail returned undeliverable,PO Box,8,0.10256410256410256
+Election day 2024,mail returned undeliverable,Other Durham street address,12,0.15384615384615385
+Election day 2024,mail returned undeliverable,Elsewhere in NC (home) address,2,0.02564102564102564
+Election day 2024,confirmation not returned,Bare 1801 Fayetteville St,33,0.3
+Election day 2024,confirmation not returned,1801 Fayetteville + dorm/room,37,0.33636363636363636
+Election day 2024,confirmation not returned,PO Box,3,0.02727272727272727
+Election day 2024,confirmation not returned,Other Durham street address,2,0.01818181818181818
+Election day 2024,confirmation not returned,Elsewhere in NC (home) address,20,0.18181818181818182
+Election day 2024,confirmation not returned,Out-of-state (home) address,15,0.13636363636363635
+Current file (2026),verified,Bare 1801 Fayetteville St,374,0.32778264680105174
+Current file (2026),verified,1801 Fayetteville + dorm/room,438,0.3838737949167397
+Current file (2026),verified,PO Box,5,0.0043821209465381246
+Current file (2026),verified,Other Durham street address,41,0.03593339176161262
+Current file (2026),verified,Elsewhere in NC (home) address,141,0.12357581069237511
+Current file (2026),verified,Out-of-state (home) address,142,0.12445223488168274
+Current file (2026),pending verification/confirmation,Bare 1801 Fayetteville St,73,0.26258992805755393
+Current file (2026),pending verification/confirmation,1801 Fayetteville + dorm/room,181,0.6510791366906474
+Current file (2026),pending verification/confirmation,PO Box,1,0.0035971223021582736
+Current file (2026),pending verification/confirmation,Other Durham street address,10,0.03597122302158273
+Current file (2026),pending verification/confirmation,Elsewhere in NC (home) address,8,0.02877697841726619
+Current file (2026),pending verification/confirmation,Out-of-state (home) address,5,0.017985611510791366
+Current file (2026),unverified,Bare 1801 Fayetteville St,10,0.2127659574468085
+Current file (2026),unverified,1801 Fayetteville + dorm/room,31,0.6595744680851063
+Current file (2026),unverified,Other Durham street address,1,0.02127659574468085
+Current file (2026),unverified,Elsewhere in NC (home) address,5,0.10638297872340426
+Current file (2026),mail returned undeliverable,Bare 1801 Fayetteville St,70,0.2766798418972332
+Current file (2026),mail returned undeliverable,1801 Fayetteville + dorm/room,163,0.6442687747035574
+Current file (2026),mail returned undeliverable,Other Durham street address,14,0.05533596837944664
+Current file (2026),mail returned undeliverable,Elsewhere in NC (home) address,3,0.011857707509881422
+Current file (2026),mail returned undeliverable,Out-of-state (home) address,3,0.011857707509881422
+Current file (2026),confirmation not returned,Bare 1801 Fayetteville St,89,0.22084367245657568
+Current file (2026),confirmation not returned,1801 Fayetteville + dorm/room,282,0.6997518610421837
+Current file (2026),confirmation not returned,PO Box,2,0.004962779156327543
+Current file (2026),confirmation not returned,Other Durham street address,12,0.02977667493796526
+Current file (2026),confirmation not returned,Elsewhere in NC (home) address,10,0.02481389578163772
+Current file (2026),confirmation not returned,Out-of-state (home) address,8,0.019851116625310174
+Current file (2026),DL/SSN update needed,Bare 1801 Fayetteville St,122,0.5622119815668203
+Current file (2026),DL/SSN update needed,1801 Fayetteville + dorm/room,60,0.2764976958525346
+Current file (2026),DL/SSN update needed,Other Durham street address,18,0.08294930875576037
+Current file (2026),DL/SSN update needed,Elsewhere in NC (home) address,9,0.041474654377880185
+Current file (2026),DL/SSN update needed,Out-of-state (home) address,8,0.03686635944700461

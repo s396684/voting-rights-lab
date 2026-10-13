@@ -1,1 +1,8 @@
 .venv/
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+data/raw/
+data/derived/
