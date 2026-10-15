@@ -1,7 +1,0 @@
-status_now,registrations,share
-"Active, not yet verified",355,0.085
-"Active, verified",1241,0.296
-"Denied, mail undeliverable",1391,0.332
-"Denied, other",1,0
-"Inactive, mail undeliverable",333,0.08
-"Inactive, other",867,0.207
