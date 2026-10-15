@@ -1,0 +1,25 @@
+year_registered,On campus,bare_1801,Re-registered?,New status,people
+2024,No,FALSE,No,NA,24
+2024,No,FALSE,Yes,Active,15
+2024,No,FALSE,Yes,Inactive,3
+2024,Yes,FALSE,No,NA,15
+2024,Yes,FALSE,Yes,Active,3
+2024,Yes,FALSE,Yes,Inactive,1
+2024,Yes,TRUE,No,NA,127
+2024,Yes,TRUE,Yes,Active,40
+2024,Yes,TRUE,Yes,Denied,2
+2024,Yes,TRUE,Yes,Inactive,1
+2025,No,FALSE,No,NA,10
+2025,No,FALSE,Yes,Active,1
+2025,No,FALSE,Yes,Denied,2
+2025,Yes,FALSE,No,NA,6
+2025,Yes,FALSE,Yes,Active,1
+2025,Yes,TRUE,No,NA,64
+2025,Yes,TRUE,Yes,Active,15
+2026,No,FALSE,No,NA,12
+2026,No,FALSE,Yes,Active,2
+2026,No,FALSE,Yes,Denied,1
+2026,Yes,FALSE,No,NA,1
+2026,Yes,TRUE,No,NA,35
+2026,Yes,TRUE,Yes,Active,3
+2026,Yes,TRUE,Yes,Denied,2

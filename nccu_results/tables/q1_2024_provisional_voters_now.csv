@@ -1,0 +1,15 @@
+status_now,outcome,voters
+"Active, verified",Counted,12
+"Active, verified",Partially counted,7
+"Active, verified",Not counted,23
+"Active, not yet verified",Counted,1
+"Active, not yet verified",Not counted,1
+"Inactive, mail undeliverable",Counted,1
+"Inactive, mail undeliverable",Not counted,3
+"Inactive, other",Counted,5
+"Denied, mail undeliverable",Not counted,17
+Removed,Counted,1
+Removed,Partially counted,1
+No Durham registration found,Counted,7
+No Durham registration found,Partially counted,1
+No Durham registration found,Not counted,67

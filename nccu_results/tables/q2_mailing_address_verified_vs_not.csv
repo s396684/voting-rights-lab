@@ -1,0 +1,36 @@
+file,compare,mail,registrants,total,share
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,1801 Fayetteville + dorm/room,42,280,0.15
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,Bare 1801 Fayetteville St,91,280,0.325
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,"Home address, elsewhere in NC",14,280,0.05
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,"Home address, out of state",2,280,0.007142857142857143
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,Other Durham address,20,280,0.07142857142857142
+Election Day 2024 (precinct 55-49 only),Mail returned undeliverable,PO Box,111,280,0.3964285714285714
+Election Day 2024 (precinct 55-49 only),Not yet verified,1801 Fayetteville + dorm/room,670,824,0.8131067961165048
+Election Day 2024 (precinct 55-49 only),Not yet verified,Bare 1801 Fayetteville St,34,824,0.0412621359223301
+Election Day 2024 (precinct 55-49 only),Not yet verified,"Home address, elsewhere in NC",27,824,0.032766990291262135
+Election Day 2024 (precinct 55-49 only),Not yet verified,"Home address, out of state",13,824,0.015776699029126214
+Election Day 2024 (precinct 55-49 only),Not yet verified,Other Durham address,79,824,0.09587378640776699
+Election Day 2024 (precinct 55-49 only),Not yet verified,PO Box,1,824,0.0012135922330097086
+Election Day 2024 (precinct 55-49 only),Verified,1801 Fayetteville + dorm/room,513,2213,0.23181201988251243
+Election Day 2024 (precinct 55-49 only),Verified,Bare 1801 Fayetteville St,1107,2213,0.500225937641211
+Election Day 2024 (precinct 55-49 only),Verified,"Home address, elsewhere in NC",284,2213,0.12833258020786262
+Election Day 2024 (precinct 55-49 only),Verified,"Home address, out of state",202,2213,0.09127880704925441
+Election Day 2024 (precinct 55-49 only),Verified,Other Durham address,67,2213,0.03027564392227745
+Election Day 2024 (precinct 55-49 only),Verified,PO Box,40,2213,0.01807501129688206
+Today's file,Mail returned undeliverable,1801 Fayetteville + dorm/room,396,1724,0.2296983758700696
+Today's file,Mail returned undeliverable,Bare 1801 Fayetteville St,984,1724,0.5707656612529002
+Today's file,Mail returned undeliverable,"Home address, elsewhere in NC",59,1724,0.034222737819025524
+Today's file,Mail returned undeliverable,"Home address, out of state",29,1724,0.016821345707656612
+Today's file,Mail returned undeliverable,Other Durham address,99,1724,0.0574245939675174
+Today's file,Mail returned undeliverable,PO Box,157,1724,0.09106728538283063
+Today's file,Not yet verified,1801 Fayetteville + dorm/room,247,355,0.6957746478873239
+Today's file,Not yet verified,Bare 1801 Fayetteville St,82,355,0.23098591549295774
+Today's file,Not yet verified,"Home address, elsewhere in NC",10,355,0.028169014084507043
+Today's file,Not yet verified,"Home address, out of state",2,355,0.005633802816901409
+Today's file,Not yet verified,Other Durham address,14,355,0.03943661971830986
+Today's file,Verified,1801 Fayetteville + dorm/room,460,1241,0.370668815471394
+Today's file,Verified,Bare 1801 Fayetteville St,405,1241,0.32634971796937956
+Today's file,Verified,"Home address, elsewhere in NC",156,1241,0.12570507655116842
+Today's file,Verified,"Home address, out of state",150,1241,0.12087026591458501
+Today's file,Verified,Other Durham address,54,1241,0.043513295729250605
+Today's file,Verified,PO Box,16,1241,0.0128928283642224
