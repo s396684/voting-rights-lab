@@ -1,60 +1,175 @@
-"""Download 2024 NCSBE files and keep NCCU's two precincts (55-49 and 55-11).
-
-Provisional ballots are kept by WHERE THE BALLOT WAS CAST (voted_pct_lbl).
-Run from the repo root:  python nccu/load_nccu_data.py
-"""
+import requests
 import pandas as pd
+import geopandas as gpd
 
-NCCU_PRECINCTS = ["55-49", "55-11"]
+# nccu provisional ballots '24
 
-prov_24_link = "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/provisional_20241105.txt"
-snapshot_24_link = "https://s3.amazonaws.com/dl.ncsbe.gov/data/Snapshots/VR_Snapshot_20241105.zip"
+prov_links = {
+    "2016": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2016_11_08/provisional_20161108.txt",
+    "2018": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2018_11_06/provisional_20181106.txt",
+    "2020": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2020_11_03/provisional_20201103.txt",
+    "2022": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2022_11_08/provisional_20221108.txt",
+    "2024": "https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2024_11_05/provisional_20241105.txt",
+}
 
-# ---- 1. Provisional ballots cast in the NCCU precincts ------------------------
-prov_24 = pd.read_csv(prov_24_link, sep="\t", dtype=str, encoding="utf-16")
-prov_24.columns = prov_24.columns.str.strip()
+pcts = ["55-49", "55-11"]
 
-nccu_prov_24 = prov_24.loc[
-    prov_24["voted_pct_lbl"].str.strip().isin(NCCU_PRECINCTS)
-    & (prov_24["county_name"].str.strip() == "DURHAM")
-].copy()
-nccu_prov_24.to_csv("data/processed/nccu_prov_24.csv", index=False)
-print("Provisional ballots cast in 55-49 + 55-11:", len(nccu_prov_24))
-print(nccu_prov_24["voted_pct_lbl"].value_counts())
+for year, gen_prov_link in prov_links.items():
+    gen_prov = pd.read_csv(
+        gen_prov_link,
+        sep="\t",
+        dtype=str,
+        encoding="utf-16",
+    )
 
-# ---- 2. Election-day 2024 snapshot (big: read in chunks, keep Durham only) --
-snapshot_cols = [
-    "snapshot_dt", "county_id", "county_desc", "voter_reg_num", "ncid",
-    "status_cd", "voter_status_desc", "reason_cd", "voter_status_reason_desc",
-    "absent_ind", "name_prefx_cd", "last_name", "first_name", "midl_name",
-    "name_sufx_cd", "house_num", "half_code", "street_dir", "street_name",
-    "street_type_cd", "street_sufx_cd", "unit_designator", "unit_num",
-    "res_city_desc", "state_cd", "zip_code", "mail_addr1", "mail_addr2",
-    "mail_addr3", "mail_addr4", "mail_city", "mail_state", "mail_zipcode",
-    "area_cd", "phone_num", "race_code", "race_desc", "ethnic_code",
-    "ethnic_desc", "party_cd", "party_desc", "sex_code", "sex", "age",
-    "birth_place", "registr_dt", "precinct_abbrv", "precinct_desc",
+    nccu_prov = gen_prov.loc[(gen_prov["voted_pct_lbl"].isin(pcts))]
+    nccu_prov["year"] = year
+    print(f"{year}: {len(nccu_prov)} provisional ballots")
+    nccu_prov.to_csv(f"data/processed/nccu_prov_{year}.csv", index=False)
+
+# nccu snapshot files '24
+snapshot_24_link = (
+    "https://s3.amazonaws.com/dl.ncsbe.gov/data/Snapshots/VR_Snapshot_20241105.zip"
+)
+chunks = pd.read_csv(
+    snapshot_24_link,
+    sep="\t",
+    dtype=str,
+    encoding="utf-16",
+    on_bad_lines="skip",  # double check; may create problems later
+    chunksize=500_000,
+)
+snapshot_24 = pd.concat(chunks, ignore_index=True)
+snapshot_24.to_csv("data/processed/snapshot_24.csv", index=False)
+
+
+snapshot_cols_of_interest = [
+    "snapshot_dt",
+    "county_id",
+    "county_desc",
+    "voter_reg_num",
+    "ncid",
+    "status_cd",
+    "voter_status_desc",
+    "reason_cd",
+    "voter_status_reason_desc",
+    "absent_ind",
+    "name_prefx_cd",
+    "last_name",
+    "first_name",
+    "midl_name",
+    "name_sufx_cd",
+    "house_num",
+    "half_code",
+    "street_dir",
+    "street_name",
+    "street_type_cd",
+    "street_sufx_cd",
+    "unit_designator",
+    "unit_num",
+    "res_city_desc",
+    "state_cd",
+    "zip_code",
+    "mail_addr1",
+    "mail_addr2",
+    "mail_addr3",
+    "mail_addr4",
+    "mail_city",
+    "mail_state",
+    "mail_zipcode",
+    "area_cd",
+    "phone_num",
+    "race_code",
+    "race_desc",
+    "ethnic_code",
+    "ethnic_desc",
+    "party_cd",
+    "party_desc",
+    "sex_code",
+    "sex",
+    "age",
+    "birth_place",
+    "registr_dt",
+    "precinct_abbrv",
+    "precinct_desc",
 ]
 
-durham_chunks = []
-for chunk in pd.read_csv(snapshot_24_link, sep="\t", dtype=str, encoding="utf-16",
-                         on_bad_lines="skip", chunksize=500_000):
-    chunk.columns = chunk.columns.str.strip()
-    durham_chunks.append(chunk.loc[chunk["county_desc"].str.strip() == "DURHAM", snapshot_cols])
-snapshot_24_durham = pd.concat(durham_chunks, ignore_index=True)
+snapshot_24_nccu = snapshot_24.loc[
+    snapshot_24["precinct_abbrv"].str.strip().isin(pcts)
+][snapshot_cols_of_interest].copy()
+snapshot_24_nccu["year"] = "2024"
 
-# NCCU precincts only (this file goes on GitHub)
-snapshot_24_nccu = snapshot_24_durham.loc[
-    snapshot_24_durham["precinct_abbrv"].str.strip().isin(NCCU_PRECINCTS)
-]
 snapshot_24_nccu.to_csv("data/processed/snapshot_24_nccu.csv", index=False)
-print("Snapshot rows in 55-49 + 55-11:", len(snapshot_24_nccu))
 
-# Provisional voters registered ELSEWHERE in Durham still need their status, so
-# also save just those people's snapshot rows.
-prov_reg_nums = set(nccu_prov_24["voter_reg_num"].str.strip())
-snapshot_24_prov = snapshot_24_durham.loc[
-    snapshot_24_durham["voter_reg_num"].str.strip().isin(prov_reg_nums)
+# current voter registration files
+reg_26_link = "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter32.zip"
+
+reg_26 = pd.read_csv(
+    reg_26_link,
+    sep="\t",
+    dtype=str,
+    encoding="latin-1",
+)
+
+reg_26_nccu = reg_26.loc[reg_26["precinct_abbrv"].str.strip().isin(pcts)]
+
+reg_26_cols_of_interest = [
+    "county_id",
+    "county_desc",
+    "voter_reg_num",
+    "ncid",
+    "last_name",
+    "first_name",
+    "middle_name",
+    "name_suffix_lbl",
+    "status_cd",
+    "voter_status_desc",
+    "reason_cd",
+    "voter_status_reason_desc",
+    "res_street_address",
+    "res_city_desc",
+    "state_cd",
+    "zip_code",
+    "mail_addr1",
+    "mail_addr2",
+    "mail_addr3",
+    "mail_addr4",
+    "mail_city",
+    "mail_state",
+    "mail_zipcode",
+    "full_phone_number",
+    "confidential_ind",
+    "registr_dt",
+    "race_code",
+    "ethnic_code",
+    "party_cd",
+    "gender_code",
+    "birth_year",
+    "age_at_year_end",
+    "birth_state",
+    "drivers_lic",
+    "ssn",
+    "no_dl_ssn_chkbx",
+    "hava_id_req",
+    "precinct_abbrv",
+    "precinct_desc",
 ]
-snapshot_24_prov.to_csv("data/processed/snapshot_24_prov_voters.csv", index=False)
-print("Provisional voters found in the Durham snapshot:", len(snapshot_24_prov))
+reg_26_nccu = reg_26_nccu[reg_26_cols_of_interest]
+
+reg_26_nccu.to_csv("data/processed/reg_26_nccu.csv", index=False)
+
+# loading voter history file to verify provisional counts
+hist_link = "https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis32.zip"
+
+hist = pd.read_csv(
+    hist_link,
+    sep="\t",
+    dtype=str,
+    encoding="latin-1",
+)
+
+hist.to_csv("data/processed/hist_general.csv", index=False)
+
+hist_nccu = hist.loc[hist["pct_label"].str.strip().isin(pcts)]
+
+hist_nccu.to_csv("data/processed/hist_nccu.csv", index=False)

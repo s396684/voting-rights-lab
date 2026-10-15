@@ -1,0 +1,5 @@
+age_group,year,provisional_cast,provisional_approved,provisional_partial,provisional_thrown,total_ballots_cast,undeliverable,provisional_counted
+under25,2022,120,3,0,117,269,190,3
+25plus,2022,13,7,2,4,702,477,9
+unknown,2022,13,0,0,13,12,0,0
+all,2022,146,10,2,134,983,667,12

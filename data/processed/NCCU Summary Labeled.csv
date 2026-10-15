@@ -1,0 +1,21 @@
+Age Group,Year,Total Provisionals Cast,Provisionals Approved,Provisionals Partially Counted,Provisionals Thrown,Total Ballots Cast,Undeliverable ,Total Provisionals Counted (partial + full counts)
+under25,2016,27,4,1,22,1231,60,5
+25plus,2016,15,10,0,5,1179,178,10
+unknown,2016,62,8,11,43,54,0,19
+all,2016,104,22,12,70,2464,238,34
+under25,2018,66,6,2,58,692,233,8
+25plus,2018,21,10,1,10,859,535,11
+unknown,2018,7,0,0,7,24,0,0
+all,2018,94,16,3,75,1575,768,19
+under25,2020,64,4,1,59,752,116,5
+25plus,2020,20,6,4,10,1217,563,10
+unknown,2020,15,0,0,15,22,0,0
+all,2020,99,10,5,84,1991,679,15
+under25,2022,120,3,0,117,269,190,3
+25plus,2022,13,7,2,4,702,477,9
+unknown,2022,13,0,0,13,12,0,0
+all,2022,146,10,2,134,983,667,12
+under25,2024,91,13,1,77,1672,195,14
+25plus,2024,31,13,8,10,1124,334,21
+unknown,2024,25,1,0,24,36,0,1
+all,2024,147,27,9,111,2832,529,36

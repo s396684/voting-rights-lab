@@ -6,3 +6,12 @@
 *.Rproj
 data/raw/
 data/derived/
+.DS_Store
+.venv/
+.DS_Store
+*.zip
+data/processed/snapshot_*.csv
+data/processed/gen_prov_*.csv
+data/processed/*undeliverable*.csv
+data/processed/nccu_prov_2024_*.csv
+data/processed/reg_*.csv
